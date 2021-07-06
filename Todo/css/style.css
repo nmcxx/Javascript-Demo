@@ -1,0 +1,20 @@
+body
+{
+    font-family: Tahoma;
+    font-size: 13px;
+    width: 800px;
+    margin: 0px auto;
+}
+
+.header{
+    background-color: aqua;
+    min-height: 10vh;
+}
+
+.body{
+    background-color: antiquewhite;
+}
+
+.footer{
+    background-color: aquamarine;
+}
