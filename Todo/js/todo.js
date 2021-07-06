@@ -41,9 +41,21 @@ input.addEventListener("keyup", function(event) {
     let checked = todo.checked == true ? "checked" : "";
 
     li.innerHTML = `
-    <input id="${todo.id}" type="checkbox" ${checked}>
+    <input type="checkbox" onclick="statusCheck(${todo.id})" ${checked}>
     <span>${todo.text}</span>
     <button onclick="deleteTodo(${todo.id})">Xoá</button>`;
+  }
+
+  function statusCheck(id)
+  {
+    let todo = document.getElementById(id);
+    let checked = todo.childNodes[1].checked;
+
+      // console.log(todo.childNodes[1].checked);
+
+    let foundItem = todoItems.findIndex(t => t.id === Number(id));
+    todoItems[foundItem].checked = checked;
+    saveStorage();
   }
 
   function deleteTodo(id)
